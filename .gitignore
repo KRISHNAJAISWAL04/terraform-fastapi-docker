@@ -1,0 +1,19 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
+# Variables
+terraform.tfvars
+
+# Keys
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
