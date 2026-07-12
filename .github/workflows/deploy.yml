@@ -32,5 +32,21 @@ jobs:
           context: ./app
           push: true
           tags: krishnnajaiswal/fastapi-app:latest
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+           host: ${{ secrets.EC2_HOST }}
+           username: ${{ secrets.EC2_USERNAME }}
+           key: ${{ secrets.EC2_SSH_KEY }}
+           script: |
+             docker pull krishnnajaiswal/fastapi-app:latest
 
+             docker stop fastapi-container || true
+             docker rm fastapi-container || true
+
+             docker run -d \
+             --name fastapi-container \
+             -p 80:8000 \
+             --restart unless-stopped \
+             krishnnajaiswal/fastapi-app:latest
           
