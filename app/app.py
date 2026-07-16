@@ -6,14 +6,14 @@ app = FastAPI()
 @app.get("/")
 def home():
     return {
-        "message": "Hello from Docker + Terraform + FastAPI",
-        "author": "Krishna Jaiswal",
-        "project": "DevOps Portfolio"
+        "message": "🚀 FastAPI application is running successfully!",
+        "project": "Docker + Terraform Deployment",
+        "status": "Healthy"
     }
 
 
 @app.get("/health")
 def health():
     return {
-        "status": "healthy"
+        "status": "OK"
     }
