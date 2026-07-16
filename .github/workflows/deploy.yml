@@ -32,6 +32,9 @@ jobs:
           context: ./app
           push: true
           tags: krishnnajaiswal/fastapi-app:latest
+      - name: Wait for EC2 to be ready
+        run: sleep 90
+      
       - name: Deploy to EC2
         uses: appleboy/ssh-action@v1.2.0
         with:
