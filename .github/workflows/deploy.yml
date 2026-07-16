@@ -34,6 +34,10 @@ jobs:
           tags: krishnnajaiswal/fastapi-app:latest
       - name: Wait for EC2 to be ready
         run: sleep 90
+      - name: Check EC2 Connectivity
+        run: |
+         echo "Host: ${{ secrets.EC2_HOST }}"
+         nc -vz ${{ secrets.EC2_HOST }} 22
       
       - name: Deploy to EC2
         uses: appleboy/ssh-action@v1.2.0
