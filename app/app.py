@@ -8,7 +8,7 @@ def home():
     return {
         "message": "Hello from Docker + Terraform + FastAPI",
         "author": "Krishna Jaiswal",
-        "project": " Portfolio"
+        "project": " my Portfolio"
     }
 
 
