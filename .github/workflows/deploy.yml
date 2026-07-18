@@ -40,12 +40,12 @@ jobs:
       - name: Check EC2 Connectivity
         run: |
           echo "Checking SSH connectivity..."
-          nc -vz 13.51.254.161 22
+          nc -vz 16.16.123.196 22
 
       - name: Deploy to EC2
         uses: appleboy/ssh-action@v1.2.0
         with:
-          host: 13.51.254.161
+          host: 16.16.123.196
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           port: 22
